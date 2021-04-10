@@ -1,12 +1,4 @@
-USE master;
 
-CREATE DATABASE LoginHeavenDB;
-
-IF EXISTS (SELECT * FROM sys.databases WHERE name = 'LoginHeavenDB')
-BEGIN
-    USE LoginHeavenDB;
-
---DROP TABLE if EXISTS tblLoginDetail
 
 CREATE TABLE tblLoginDetail
     (
@@ -19,8 +11,3 @@ CREATE TABLE tblLoginDetail
         IsLockOutDate DATETIME,
         CreatedDate DATETIME CONSTRAINT[DF_LoginDetail_CreatedDate0] DEFAULT(Getdate())
     )
-END
-
-
-
-SELECT * FROM sys.databases
